@@ -1,0 +1,47 @@
+
+FC = ifort
+
+##FFLAGS = -Bstatic -o
+FFLAGS = -o 
+FFLAGS2 = -traceback -g
+
+FFLAGS1 = -stand f03 -free -check all -r8 -fast -shared-intel -heap-arrays -m64 -fp-model source -c
+#FFLAGS1 = -stand f03 -free -r8 -O3 -shared-intel -heap-arrays -m64 -fp-model fast -fpe3 -c
+
+#LLIBS = /usr/local/lib/libgfortran.a \
+
+OBJS = met_global.o module_radiation.o met_reader.o datatrans.o \
+	met_out.o read_met.o
+
+default: met_proc
+
+met_proc: $(OBJS)
+	$(FC) $(FFLAGS) met_reader $(FFLAGS2) $(OBJS) 
+#$(LLIBS)
+
+met_global.mod: met_global.o met_global.f90
+	$(FC) $(FFLAGS1) -c met_global.f90
+
+met_global.o: met_global.f90
+	$(FC) $(FFLAGS1) -c met_global.f90
+
+module_radiation.mod: module_radiation.o module_radiation.f90
+	$(FC) $(FFLAGS1) -c module_radiation.f90
+
+module_radiation.o: met_global.mod module_radiation.f90
+	$(FC) $(FFLAGS1) -c module_radiation.f90
+
+met_reader.o: met_global.mod module_radiation.mod met_reader.f90
+	$(FC) $(FFLAGS1) -c met_reader.f90 $(LLIBS)
+
+datatrans.o: met_global.mod  datatrans.f90
+	$(FC) $(FFLAGS1) -c datatrans.f90 $(LLIBS)
+
+met_out.o: met_global.mod module_radiation.mod met_out.f90
+	$(FC) $(FFLAGS1) -c met_out.f90 $(LLIBS)
+
+read_met.o: met_global.mod read_met.f90
+	$(FC) $(FFLAGS1) -c read_met.f90 $(LLIBS)
+
+clean:
+	-rm *.o *.mod *.*~ *~ 

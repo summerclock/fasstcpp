@@ -1,0 +1,20 @@
+2008111006_37N126E_38N128E_sfc.met         !met data file
+0 1 2.0 -1                !first time through test; single vs multi (0 = single); gap (days) between met files; # lines to print 
+-1.0 0.0 0 0 0 5 0        !gwl; vegint; print profile; print fluxes; print snow info; define frozen
+CX072508_AOI_3_FUT.txt     !complex
+c:\fasst\fasstusersoil.inp    !
+
+
+line1: name of met file
+line2: first time through test; 0 = first time, 1 = repeat run
+       single point/multi point; 0 = single, 1 = multi
+       maximum allowable gap between sequential met files (days)
+       number of lines to output (a negative value means same as met file)
+line3: ground water level(m); missing = < 0
+       output inverval for veg temperature file (minutes)
+       print nodal output file; 0 = no, 1 = yes
+       print surface flux file; 0 = no, 1 = yes
+       print snow information file; 0 = no, 1 = yes
+       minimum ice content to define node as frozen in main output file (% total water volume)
+line4: Terrain complex file
+line5: soil properties file name

@@ -1,0 +1,95 @@
+G1SM                  !Grayling, MI soil (SP-SM)
+      7               !USCS soil class
+      2.8985          !bulk density of dry material (g/cm^3)
+    999.0             !intrinsic density of dry material (g/cm^3)
+      0.46091         !volume fraction of solids (0.0 - 1.0)
+      0.53909         !porosity (0.0 - 1.0)
+      0.34327         !(0.306)Surface albedo-normal incidences
+      0.99            !Longwave surface emissivity
+      0.51738         !quartz content(0.0 - 1.0)
+      6.82866e-03     !organic fraction (0.0 - 1.0)
+      0.83            !thermal conductivity of bulk the dry material(W/m*K)
+     822.04           !specific heat of dry material (J/kg*K)
+      1.11429e-03     !saturated hydraulic conductivity (cm/s)
+      9.94501e-03     !residual water content (vol/vol) (0.0 - 1.0)
+      0.53909         !maximum water content (vol/vol) (0.0 -  1.0)
+     17.594           !van Genuchten Bubbling pressure head (cm)
+      2.7799          !van Genuchten exponent(n)
+    999.0             !percent sand (%)
+    999.0             !percent silt (%)
+    999.0             !percent clay (%)
+    999.0             !percent carbon content (%)
+    999.0             !plastic limit
+    999.0             !percent passing #200 sieve
+
+G2NW                  !Grayling, MI soil from PEST fit 20 April 2006 (SP-SM)
+      7               !USCS soil class
+      1.99362         !bulk density of dry material (g/cm^3)
+      2.73            !intrinsic density of dry material (g/cm^3)
+      0.730264        !volume fraction of solids (0.0 - 1.0)
+      0.269736        !porosity (0.0 - 1.0)
+      0.237203        !(0.306)Surface albedo-normal incidences
+      0.80            !Longwave surface emissivity
+      0.654613        !quartz content(0.0 - 1.0)
+      0.372599        !organic fraction (0.0 - 1.0)
+      0.19            !thermal conductivity of bulk the dry material(W/m*K)
+     703.9            !specific heat of dry material (J/kg*K)
+      8.673329e-05    !saturated hydraulic conductivity (cm/s)
+      1.458465e-03    !residual water content (vol/vol) (0.0 - 1.0)
+      0.269736        !maximum water content (vol/vol) (0.0 -  1.0)
+     21.5923          !van Genuchten Bubbling pressure head (cm)
+      1.72225         !van Genuchten exponent(n)
+    999.0             !percent sand (%)
+    999.0             !percent silt (%)
+    999.0             !percent clay (%)
+    999.0             !percent carbon content (%)
+    999.0             !plastic limit
+    999.0             !percent passing #200 sieve
+
+GSFT                  !Grayling, MI soil (SP-SM)
+      7               !USCS soil class
+      1.99362         !bulk density of dry material (g/cm^3)
+      2.73            !intrinsic density of dry material (g/cm^3)
+      0.730264        !volume fraction of solids (0.0 - 1.0)
+      0.269736        !porosity (0.0 - 1.0)
+      0.237203        !(0.306)Surface albedo-normal incidences
+      0.80            !Longwave surface emissivity
+      0.654613        !quartz content(0.0 - 1.0)
+      0.372599        !organic fraction (0.0 - 1.0)
+      0.19            !thermal conductivity of bulk the dry material(W/m*K)
+     703.9            !specific heat of dry material (J/kg*K)
+      3.673329e-05    !saturated hydraulic conductivity (cm/s)
+      1.458465e-03    !residual water content (vol/vol) (0.0 - 1.0)
+      0.269736        !maximum water content (vol/vol) (0.0 -  1.0)
+     110.5923         !van Genuchten Bubbling pressure head (cm)
+      2.42225         !van Genuchten exponent(n)
+    999.0             !percent sand (%)
+    999.0             !percent silt (%)
+    999.0             !percent clay (%)
+    999.0             !percent carbon content (%)
+    999.0             !plastic limit
+    999.0             !percent passing #200 sieve
+
+GPST                  !PEST fit soil 24 April 2008
+      7               !USCS soil class
+    1.64              !bulk density of dry material (g/cm^3)
+    2.73              !intrinsic density of dry material (g/cm^3)
+    999.0             !volume fraction of solids (0.0 - 1.0)
+    999.0             !porosity (0.0 - 1.0)
+    0.33              !(0.306)Surface albedo-normal incidences
+    0.93              !Longwave surface emissivity
+    0.49              !quartz content(0.0 - 1.0)
+    0.23              !organic fraction (0.0 - 1.0)
+    1.1810832E-01     !thermal conductivity of bulk the dry material(W/m*K)
+    8.5390000E+02     !specific heat of dry material (J/kg*K)
+    2.8796465E-04     !saturated hydraulic conductivity (cm/s)
+    0.01              !residual water content (vol/vol) (0.0 - 1.0)
+    999.0             !maximum water content (vol/vol) (0.0 -  1.0)
+    55.0              !van Genuchten Bubbling pressure head (cm)
+    2.4               !van Genuchten exponent(n)
+    999.0             !percent sand (%)
+    999.0             !percent silt (%)
+    999.0             !percent clay (%)
+    999.0             !percent carbon content (%)
+    999.0             !plastic limit
+    999.0             !percent passing #200 sieve

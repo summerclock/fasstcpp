@@ -1,0 +1,4 @@
+NHRD_LINES                                            4     EDCS_UNITS_UNITLESS
+NSUBHRD_LINES                                         1     EDCS_UNITS_UNITLESS
+EDCS_AC_SPATIAL_GEODETIC_LATITUDE                    20.00  EDCS_UNITS_DEGREE_ARC
+EDCS_AC_SPATIAL_GEODETIC_LONGITUDE                   20.00  EDCS_UNITS_DEGREE_ARC

@@ -1,0 +1,95 @@
+SLSD                  !default soil type
+      7               !soil type and class
+      1.490           !bulk density of dry material (g/cm^3)
+      2.730           !intrinsic density of dry material (g/cm^)
+      0.546           !volume fraction of solids (0.0 - 1.0)
+      0.454           !porosity (0.0 - 1.0)
+      0.40            !Surface albedo-normal incidences
+      0.92            !Longwave surface emissivity
+      0.800           !quartz content(0.0 - 1.0)
+      0.00            !organic fraction (0.0 - 1.0)
+      0.2810          !thermal conductivity of bulk the dry material(W/m*K)
+      730.0           !specific heat of dry material (J/kg*K)
+      0.0007987       !saturated hydraulic conductivity (cm/s)
+      0.01            !residual water content (vol/vol) (0.0 - 1.0)
+      0.454           !maximum water content (vol/vol) (0.0 -  1.0)
+     23.5474          !van Genuchten Bubbling pressure head (cm)
+      1.500           !van Genuchten exponent(n)
+    999.0             !percent sand (%)
+    999.0             !percent silt (%)
+    999.0             !percent clay (%)
+    999.0             !percent carbon content (%)
+    999.0             !plastic limit
+    999.0             !percent passing #200 sieve
+  
+RSND                  !Rachel's SLTHERM sand
+      7               !soil type and class
+      1.745           !bulk density of dry material (g/cm^3)
+      2.780           !intrinsic density of dry material (g/cm^)
+      0.628           !volume fraction of solids (0.0 - 1.0)
+      0.372           !porosity (0.0 - 1.0)
+      0.30            !Surface albedo-normal incidences
+      0.98            !Longwave surface emissivity
+      0.800           !quartz content(0.0 - 1.0)
+      0.00            !organic fraction (0.0 - 1.0)
+      0.2810          !thermal conductivity of the dry material(W/m*K)
+      730.0           !specific heat of dry material (J/kg*K)
+      0.0011          !saturated hydraulic conductivity (cm/s)
+      0.01            !residual water content (vol/vol) (0.0 - 1.0)
+      0.372           !maximum water content (vol/vol) (0.0 -  1.0)
+     23.5474          !van Genuchten Bubbling pressure head (cm)
+      1.500           !van Genuchten exponent(n)
+    999.0             !percent sand (%)
+    999.0             !percent silt (%)
+    999.0             !percent clay (%)
+    999.0             !percent carbon content (%)
+    999.0             !plastic limit
+    999.0             !percent passing #200 sieve
+
+RCLY                  !Rachel's SLTHERM clay
+     10               !soil type and class
+      1.650           !bulk density of dry material (g/cm^3)
+      2.800           !intrinsic density of dry material (g/cm^)
+      0.589           !volume fraction of solids (0.0 - 1.0)
+      0.413           !porosity (0.0 - 1.0)
+      0.30            !Surface albedo-normal incidences
+      0.98            !Longwave surface emissivity
+      0.050           !quartz content(0.0 - 1.0)
+      0.00            !organic fraction (0.0 - 1.0)
+      0.1730          !thermal conductivity of the dry material(W/m*K)
+      730.0           !specific heat of dry material (J/kg*K)
+      0.0000133       !saturated hydraulic conductivity (cm/s)
+      0.01            !residual water content (vol/vol) (0.0 - 1.0)
+      0.413           !maximum water content (vol/vol) (0.0 -  1.0)
+   1261.0419          !van Genuchten Bubbling pressure head (cm)
+      1.340           !van Genuchten exponent(n)
+    999.0             !percent sand (%)
+    999.0             !percent silt (%)
+    999.0             !percent clay (%)
+    999.0             !percent carbon content (%)
+    999.0             !plastic limit
+    999.0             !percent passing #200 sieve
+
+RSLT                  !Rachel's SLTHERM silt
+      9               !soil type and class
+      1.350           !bulk density of dry material (g/cm^3)
+      2.820           !intrinsic density of dry material (g/cm^)
+      0.479           !volume fraction of solids (0.0 - 1.0)
+      0.515           !porosity (0.0 - 1.0)
+      0.30            !Surface albedo-normal incidences
+      0.98            !Longwave surface emissivity
+      0.350           !quartz content(0.0 - 1.0)
+      0.00            !organic fraction (0.0 - 1.0)
+      0.2510          !thermal conductivity of the dry material(W/m*K)
+      730.0           !specific heat of dry material (J/kg*K)
+      0.0000778       !saturated hydraulic conductivity (cm/s)
+      0.03            !residual water content (vol/vol) (0.0 - 1.0)
+      0.515           !maximum water content (vol/vol) (0.0 -  1.0)
+    151.0175          !van Genuchten Bubbling pressure head (cm)
+      1.500           !van Genuchten exponent(n)
+    999.0             !percent sand (%)
+    999.0             !percent silt (%)
+    999.0             !percent clay (%)
+    999.0             !percent carbon content (%)
+    999.0             !plastic limit
+    999.0             !percent passing #200 sieve

@@ -1,0 +1,141 @@
+
+FC = f95
+
+FFLAGS = -g -o
+# -s -trap=exception[all]
+FFLAGS1 = -g -s -O1 -f free -en -Rb -Rc -Rs -N113 -m2 -dq -c
+# -g = generate debugging information
+# -en = warn for non F90/95 code
+# -et = -traceback
+# -m2 = warning level(issue error, warning, caution statements)
+# -dq = allow more than 100 errors
+# -R = array consistency checks
+# -N113 and i8 acts like autodouble
+# -Xlist = pass things to linker
+
+LLIBS =	/opt/absoft/lib/libimslf90.a \
+	/opt/absoft/lib/libf90math.a \
+	/opt/absoft/lib/libU77.a \
+
+OBJS = fasst_global.o module_canopy.o module_lowveg.o module_radiation.o \
+        module_snow.o module_zerovars.o fasst_driver.o fasst_main.o \
+        albedo_emis.o flow_param.o fasst_functions.o icethick.o \
+        initprofile.o initsurface.o initwater.o missing_met.o new_profile.o \
+        open_water.o read_complex.o read_old_data.o sflux.o\
+	soil_moisture.o soil_strength.o soil_tmp.o sp_humid.o sub_divide.o \
+	surfenergy.o th_param.o US_soil_tools.o write_outputs.o \
+
+default: FASST
+
+FASST: $(OBJS)
+	$(FC) $(FFLAGS) FASST $(OBJS) $(LLIBS)
+
+fasst_global.mod: fasst_global.o fasst_global.F90
+	$(FC) $(FFLAGS1) fasst_global.F90
+    
+fasst_global.o: fasst_global.F90
+	$(FC) $(FFLAGS1) fasst_global.F90
+
+module_canopy.mod: module_canopy.o module_canopy.F90 
+	$(FC) $(FFLAGS1) module_canopy.F90 $(LLIBS)
+
+module_canopy.o: fasst_global.mod module_canopy.F90
+	$(FC) $(FFLAGS1) module_canopy.F90 $(LLIBS)
+
+module_lowveg.mod: module_lowveg.o module_lowveg.F90
+	$(FC) $(FFLAGS1) module_lowveg.F90 $(LLIBS)
+
+module_lowveg.o: fasst_global.mod module_lowveg.F90
+	$(FC) $(FFLAGS1) module_lowveg.F90 $(LLIBS)
+
+module_radiation.mod: module_radiation.o module_radiation.F90
+	$(FC) $(FFLAGS1) module_radiation.F90 $(LLIBS)
+
+module_radiation.o: fasst_global.mod module_radiation.F90
+	$(FC) $(FFLAGS1) module_radiation.F90 $(LLIBS)
+
+module_snow.mod: module_snow.o module_snow.F90
+	$(FC) $(FFLAGS1) module_snow.F90 $(LLIBS)
+
+module_snow.o: fasst_global.mod module_snow.F90
+	$(FC) $(FFLAGS1) module_snow.F90 $(LLIBS)
+
+module_zerovars.mod: module_zerovars.o module_zerovars.F90
+	$(FC) $(FFLAGS1) module_zerovars.F90 $(LLIBS)
+
+module_zerovars.o: fasst_global.mod module_zerovars.F90
+	$(FC) $(FFLAGS1) module_zerovars.F90 $(LLIBS)
+
+fasst_driver.o: fasst_global.mod module_zerovars.mod fasst_driver.F90
+	$(FC) $(FFLAGS1) fasst_driver.F90 $(LLIBS)
+
+fasst_main.o: fasst_global.mod module_canopy.mod module_lowveg.mod module_snow.mod fasst_main.F90
+	$(FC) $(FFLAGS1) fasst_main.F90 $(LLIBS)
+
+albedo_emis.o: fasst_global.mod albedo_emis.F90
+	$(FC) $(FFLAGS1) albedo_emis.F90 $(LLIBS)
+
+flow_param.o: fasst_global.mod flow_param.F90
+	$(FC) $(FFLAGS1) flow_param.F90 $(LLIBS)
+
+fasst_functions.o: fasst_global.mod fasst_functions.F90
+	$(FC) $(FFLAGS1) fasst_functions.F90 $(LLIBS)
+
+icethick.o: fasst_global.mod icethick.F90
+	$(FC) $(FFLAGS1) icethick.F90 $(LLIBS)
+
+initprofile.o: fasst_global.mod initprofile.F90
+	$(FC) $(FFLAGS1) initprofile.F90 $(LLIBS)
+
+initsurface.o: fasst_global.mod initsurface.F90
+	$(FC) $(FFLAGS1) initsurface.F90 $(LLIBS)
+
+initwater.o: fasst_global.mod initwater.F90
+	$(FC) $(FFLAGS1) initwater.F90 $(LLIBS)
+
+missing_met.o: fasst_global.mod module_radiation.mod missing_met.F90
+	$(FC) $(FFLAGS1) missing_met.F90 $(LLIBS)
+
+new_profile.o: fasst_global.mod new_profile.F90
+	$(FC) $(FFLAGS1) new_profile.F90 $(LLIBS)
+
+open_water.o: fasst_global.mod module_snow.mod open_water.F90
+	$(FC) $(FFLAGS1) open_water.F90 $(LLIBS)
+
+read_complex.o: fasst_global.mod read_complex.F90
+	$(FC) $(FFLAGS1) read_complex.F90 $(LLIBS)
+
+read_old_data.o: fasst_global.mod read_old_data.F90
+	$(FC) $(FFLAGS1) read_old_data.F90 $(LLIBS)
+
+sflux.o: fasst_global.mod sflux.F90
+	$(FC) $(FFLAGS1) sflux.F90 $(LLIBS)
+
+soil_moisture.o: fasst_global.mod soil_moisture.F90
+	$(FC) $(FFLAGS1) soil_moisture.F90 $(LLIBS)
+
+soil_strength.o: fasst_global.mod soil_strength.F90
+	$(FC) $(FFLAGS1) soil_strength.F90 $(LLIBS)
+
+soil_tmp.o: fasst_global.mod soil_tmp.F90
+	$(FC) $(FFLAGS1) soil_tmp.F90 $(LLIBS)
+
+sp_humid.o: fasst_global.mod sp_humid.F90
+	$(FC) $(FFLAGS1) sp_humid.F90 $(LLIBS)
+
+sub_divide.o: fasst_global.mod sub_divide.F90
+	$(FC) $(FFLAGS1) sub_divide.F90 $(LLIBS)
+
+surfenergy.o: fasst_global.mod surfenergy.F90
+	$(FC) $(FFLAGS1) surfenergy.F90 $(LLIBS)
+
+th_param.o: fasst_global.mod th_param.F90
+	$(FC) $(FFLAGS1) th_param.F90 $(LLIBS)
+
+US_soil_tools.o: fasst_global.mod US_soil_tools.F90
+	$(FC) $(FFLAGS1) US_soil_tools.F90 $(LLIBS)
+
+write_outputs.o: fasst_global.mod write_outputs.F90
+	$(FC) $(FFLAGS1) write_outputs.F90 $(LLIBS)
+
+clean: rm $(OBJ) *.*~ *~

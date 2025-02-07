@@ -1,0 +1,90 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-debug",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-f",
+                "makefile_gnu"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-f",
+                "makefile_gnu",
+                "clean"
+            ]
+        },
+        {
+            "label": "generate-coverage",
+            "type": "shell",
+            "command": "gcov",
+            "args": [
+                "-b",
+                "-f",
+                "*.F90"
+            ],
+            "dependsOn": [
+                "build-debug"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "generate-coverage-report",
+            "type": "shell",
+            "command": "lcov",
+            "args": [
+                "--capture",
+                "--directory",
+                ".",
+                "--output-file",
+                "coverage.info",
+                "&&",
+                "genhtml",
+                "coverage.info",
+                "--output-directory",
+                "coverage_report"
+            ],
+            "dependsOn": [
+                "build-debug"
+            ],
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "clean-coverage",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "-rf",
+                "*.gcno",
+                "*.gcda",
+                "*.gcov",
+                "coverage.info",
+                "coverage_report"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "group": "test"
+        }
+    ]
+}

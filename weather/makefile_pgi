@@ -1,0 +1,48 @@
+
+FC = pgf95
+
+FFLAGS = -g -Bstatic -o
+FFLAGS1 = -g -Bstatic -O1 -Minform=inform -Mbackslash -Mr8 -Msave -Mfree -Mstandard
+
+LLIBS = /opt/pgi/linux86/10.5/lib/libpgf90.a \
+	/opt/pgi/linux86/10.5/lib/libpgf77.a \
+	/opt/pgi/linux86/10.5/lib/libstd.a \
+
+OBJS = met_global.o module_radiation.o  met_reader.o datatrans.o met_out.o read_met.o
+
+default: met_proc
+
+met_proc: $(OBJS)
+	$(FC) $(FFLAGS) met_reader $(OBJS) 
+#$(LLIBS)
+
+met_global.mod: met_global.o met_global.F90
+	$(FC) $(FFLAGS1) -c met_global.F90
+
+met_global.o: met_global.F90
+	$(FC) $(FFLAGS1) -c met_global.F90
+
+module_radiation.mod: module_radiation.o module_radiation.F90
+	$(FC) $(FFLAGS1) -c module_radiation.F90
+
+module_radiation.o: met_global.mod module_radiation.F90
+	$(FC) $(FFLAGS1) -c module_radiation.F90
+
+met_reader.o: met_global.mod module_radiation.mod met_reader.F90
+	$(FC) $(FFLAGS1) -c met_reader.F90 
+#$(LLIBS)
+
+datatrans.o: met_global.mod  datatrans.F90
+	$(FC) $(FFLAGS1) -c datatrans.F90 
+#$(LLIBS)
+
+met_out.o: met_global.mod module_radiation.mod met_out.F90
+	$(FC) $(FFLAGS1) -c met_out.F90 
+#$(LLIBS)
+
+read_met.o: met_global.mod read_met.F90
+	$(FC) $(FFLAGS1) -c read_met.F90 
+#$(LLIBS)
+
+clean:
+	-rm *.o *.*~ *~

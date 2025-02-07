@@ -1,0 +1,15 @@
+c:\fasst_support\weather\zipfilfe_data\SingleCellExample.mta
+c:\fasst_support\weather\zipfilfe_data\SingleCellExample.met
+c:\fasst_support\weather\zipfilfe_data\SingleCellExample_met.out
+0                !first time=0, repeat=1
+0.35,0.0         !albedo, snow/rain cutoff temperature
+
+
+
+
+Notes:
+Line 1: input meta file name (met file translater file)
+Line 2: input met file name
+Line 3: output file name
+Line 4: if this is 1, next line is name of original met output file
+Line 5: surface albedo - used to calculate missing radiation parameters

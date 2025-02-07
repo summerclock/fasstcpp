@@ -1,0 +1,48 @@
+{
+    // lldb for cmake buildsystem
+    // vscode-cmake-tools & vscode-lldb required
+    // template from https://vector-of-bool.github.io/docs/vscode-cmake-tools/debugging.html
+    // template from https://github.com/vadimcn/vscode-lldb/blob/v1.7.4/MANUAL.md
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(lldb) Debug FASST",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/FASST",
+            "args": ["${workspaceFolder}/gr1_zip.inp"],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build-debug",
+            // "initCommands": [
+            //     "settings set target.disable-aslr false"
+            // ],
+            // "stopOnEntry": true
+        },
+        {
+            "name": "(gdb) Debug FASST",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/FASST",
+            "args": ["${workspaceFolder}/gr1_zip.inp"],
+            "stopAtEntry": true,
+            "stopAtConnect": true,
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build-debug",
+            "MIMode": "gdb",
+            "environment": [],
+            "externalConsole": false,
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Skip library files",
+                    "text": "skip -gfi /usr/include/\\*",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

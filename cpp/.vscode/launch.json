@@ -1,0 +1,25 @@
+{
+    // lldb for cmake buildsystem
+    // vscode-cmake-tools & vscode-lldb required
+    // template from https://vector-of-bool.github.io/docs/vscode-cmake-tools/debugging.html
+    // template from https://github.com/vadimcn/vscode-lldb/blob/v1.7.4/MANUAL.md
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(lldb) Launch",
+            // Resolved by codeLLDB
+            "type": "lldb",
+            "request": "launch",
+            // Resolved by CMake Tools:
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [
+                "gr1_zip.inp"
+            ],
+            // "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/data",
+            "initCommands": [
+                "settings set target.disable-aslr false"
+            ]
+        }
+    ]
+}

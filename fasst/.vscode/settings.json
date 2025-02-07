@@ -1,0 +1,13 @@
+{
+    "coverage-gutters.coverageFileNames": [
+        "*.gcov"
+    ],
+    "coverage-gutters.showGutterCoverage": true,
+    "coverage-gutters.showLineCoverage": true,
+    "coverage-gutters.showRulerCoverage": true,
+    "coverage-gutters.highlightdark": {
+        "uncovered": "rgba(255,0,0,0.2)",
+        "partial": "rgba(255,255,0,0.2)",
+        "covered": "rgba(0,255,0,0.2)"
+    }
+}
