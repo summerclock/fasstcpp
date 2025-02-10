@@ -5,19 +5,19 @@
     // template from https://github.com/vadimcn/vscode-lldb/blob/v1.7.4/MANUAL.md
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "(lldb) Debug FASST",
-            "type": "lldb",
-            "request": "launch",
-            "program": "${workspaceFolder}/FASST",
-            "args": ["${workspaceFolder}/gr1_zip.inp"],
-            "cwd": "${workspaceFolder}",
-            "preLaunchTask": "build-debug",
-            // "initCommands": [
-            //     "settings set target.disable-aslr false"
-            // ],
-            // "stopOnEntry": true
-        },
+        // {
+        //     "name": "(lldb) Debug FASST",
+        //     "type": "lldb",
+        //     "request": "launch",
+        //     "program": "${workspaceFolder}/FASST",
+        //     "args": ["${workspaceFolder}/gr1_zip.inp"],
+        //     "cwd": "${workspaceFolder}",
+        //     "preLaunchTask": "build-debug",
+        //     // "initCommands": [
+        //     //     "settings set target.disable-aslr false"
+        //     // ],
+        //     // "stopOnEntry": true
+        // },
         {
             "name": "(gdb) Debug FASST",
             "type": "cppdbg",

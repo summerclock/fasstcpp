@@ -118,7 +118,7 @@ void Driver::ParseSinglePointMode(std::ifstream& input)
     LOG(FATAL) << "Aspect cannot be greater than +/-360 degrees";
   }
 
-  met.slope_radians = std::min(1.57, met.slope * M_PI / 180.0);
+  met.slope_radians = std::min(1.57, met.slope * PhysicalConstants::kPi / 180.0);
   met.slope_radians = std::round(met.slope_radians * 1e20) / 1e20;
 
   // Read surface roughness

@@ -88,3 +88,5 @@ FASST
 *.gcno
 *.gcda
 *.gcov
+
+!fasst/SingleCellExample_met.out

@@ -33,6 +33,8 @@ if(MSVC)
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
   set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
   add_compile_options("/Zc:preprocessor")
+  add_compile_definitions("GLOG_NO_ABBREVIATED_SEVERITIES")
+  add_compile_definitions("NOMINMAX")
 endif()
 
 # Find required packages

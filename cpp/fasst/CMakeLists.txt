@@ -1,5 +1,5 @@
 # Create fasst library
-add_library(fasst SHARED "")
+add_library(fasst STATIC "")
 
 # Add subdirectories
 add_subdirectory(core)
