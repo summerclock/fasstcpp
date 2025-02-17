@@ -1,11 +1,5 @@
-target_sources(fasst
+target_sources(fasstlib
   PRIVATE
-    Global.cpp
-    Driver.cpp
-)
-
-target_link_libraries(fasst
-  PRIVATE
-  Boost::filesystem
-  glog::glog
+    ${CMAKE_CURRENT_LIST_DIR}/Global.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/Driver.cpp
 )

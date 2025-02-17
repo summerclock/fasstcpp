@@ -5,8 +5,8 @@
 #include <string>
 #include <cmath>
 #include <limits>
-
 #include "fasst/utils/Array.h"
+#include "fasst/fasst_export.h"
 
 namespace fasst {
 
@@ -80,7 +80,7 @@ struct MetFileColumns
   static constexpr int kAerosol = 35;    // ip_aer: aerosol type
 };
 
-class GlobalData
+class DLL_PUBLIC GlobalData
 {
 public:
   GlobalData();
@@ -270,24 +270,24 @@ private:
 };
 
 template<typename T>
-inline bool ApproxEqual(const T a, const T b)
+DLL_PUBLIC inline bool ApproxEqual(const T a, const T b)
 {
   return std::abs(static_cast<int>((a - b) * 1e5)) / 1e5 <= PhysicalConstants::kEpsilon;
 }
 
 template<typename T>
-inline bool ApproxZero(const T value)
+DLL_PUBLIC inline bool ApproxZero(const T value)
 {
   return std::abs(value) <= PhysicalConstants::kEpsilon;
 }
 
 template<typename T>
-inline T Clamp(const T value, const T min, const T max)
+DLL_PUBLIC inline T Clamp(const T value, const T min, const T max)
 {
   return std::max(min, std::min(value, max));
 }
 
 // Global singleton instance
-extern std::unique_ptr<GlobalData> g_data;
+extern DLL_PUBLIC std::unique_ptr<GlobalData> g_data;
 
 } // namespace fasst

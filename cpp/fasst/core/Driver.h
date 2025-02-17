@@ -13,10 +13,11 @@
 
 #include "fasst/core/Global.h"
 #include "fasst/utils/Array.h"
+#include "fasst/fasst_export.h"
 
 namespace fasst {
 
-class Driver
+class DLL_PUBLIC Driver
 {
 public:
   Driver();
@@ -136,7 +137,7 @@ private:
   std::ofstream output5_; // snow processes data
 };
 
-void Sort2(int n,
+DLL_PUBLIC void Sort2(int n,
            utils::ArrayX<double, SystemLimits::kMaxNodes + 3>& arr,
            utils::ArrayX<int, SystemLimits::kMaxNodes + 3>& arr1,
            int& ncount,

@@ -22,6 +22,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Debug CACHE STRING "Build type (Debug, Release, etc.)" FORCE)
+endif()
+
 if(UNIX)
   set(CMAKE_SKIP_BUILD_RPATH FALSE)
   set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
@@ -30,11 +34,14 @@ if(UNIX)
 endif()
 
 if(MSVC)
+  # export all symbols
+  # set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
   set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
   add_compile_options("/Zc:preprocessor")
   add_compile_definitions("GLOG_NO_ABBREVIATED_SEVERITIES")
   add_compile_definitions("NOMINMAX")
+  add_compile_options(/Zi)
 endif()
 
 # Find required packages
@@ -43,11 +50,7 @@ find_package(glog REQUIRED)
 
 # Add subdirectories
 add_subdirectory(fasst)
-
-target_link_libraries(fasst 
-    PRIVATE 
-    Boost::filesystem
-    glog::glog
+target_compile_definitions(fasstlib
+    PRIVATE BUILDING_DLL
 )
-
 add_subdirectory(apps)

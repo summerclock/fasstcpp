@@ -1,7 +1,7 @@
-project(FasstApp)
+project(fasst)
 
-add_executable(Fasst Fasst.bin.cpp)
+add_executable(fasst Fasst.bin.cpp)
 
-target_link_libraries(Fasst PRIVATE fasst)
+target_link_libraries(fasst PRIVATE fasstlib)
 
-install(TARGETS Fasst DESTINATION bin)
+install(TARGETS fasst DESTINATION bin)

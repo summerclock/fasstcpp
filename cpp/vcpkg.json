@@ -4,7 +4,7 @@
       "boost-filesystem",
       "boost-system",
       "boost-program-options",
-      "boost-algorithm",
+      "boost-algorithm",  qq      
       "gtest",
       "glog"
     ]

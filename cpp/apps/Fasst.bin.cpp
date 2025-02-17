@@ -9,7 +9,7 @@ int main(int argc, char* argv[]) {
     if (argc > 1) {
       input_file = argv[1];
     } else {
-      input_file = "fassti.inp";  // Default input file
+      input_file = "gr1_zip.inp";  // Default input file
     }
 
     fasst::Driver driver;

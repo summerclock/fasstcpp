@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(fasst_utils)
 
-target_sources(fasst
+target_sources(fasstlib
     PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/Functions.cpp
         ${CMAKE_CURRENT_LIST_DIR}/Functions.h
